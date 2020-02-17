@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  app:
+    image: emilevauge/whoami
+    networks:
+      - web
+    labels:
+      - "traefik.backend=whoami"
+      - "traefik.frontend.rule=Host:local.docker.whoami.com"
+
+networks:
+  web:
+    external:
+      name: webgateway
