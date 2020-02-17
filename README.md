@@ -37,3 +37,13 @@ Add to `/etc/hosts`:
 ```sh
 docker-compose up -d
 ```
+
+or
+
+```sh
+docker stack deploy -c docker-compose.yml tls-traefik-selfsigned
+```
+
+Visit:
+* http://local.docker.whoami.com/
+* https://local.docker.whoami.com/
