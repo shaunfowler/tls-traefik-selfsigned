@@ -7,5 +7,5 @@ defaultEntryPoints = ["http", "https"]
   address = ":443"
     [entryPoints.https.tls]
       [[entryPoints.https.tls.certificates]]
-      certFile = "/etc/traefik/certs/local.docker.whoami.com.crt"
-      keyFile = "/etc/traefik/certs/local.docker.whoami.com.key"
+      certFile = "/etc/traefik/certs/server.crt"
+      keyFile = "/etc/traefik/certs/server.key"

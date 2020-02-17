@@ -10,10 +10,12 @@ services:
       - "443:443"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./certs:/etc/traefik/certs
+      - ./certs/local.docker.whoami.com:/etc/traefik/certs
       - ./traefik.toml:/etc/traefik/traefik.toml
 
-networks:
-  default:
-    external:
-      name: webgateway
+  app:
+    image: emilevauge/whoami
+    labels:
+      - "traefik.backend=whoami"
+      - "traefik.frontend.rule=Host:local.docker.whoami.com"
+
